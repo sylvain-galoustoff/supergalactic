@@ -1,6 +1,7 @@
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
   stories: ["../src/**/*.mdx", "../lib/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+
   addons: [
     "@storybook/addon-onboarding",
     "@storybook/addon-links",
@@ -8,8 +9,14 @@ const config = {
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
   ],
-  core: {
-    builder: "@storybook/builder-vite", // 👈 The builder enabled here.
+
+  core: {},
+
+  framework: {
+    name: "@storybook/react-vite",
+    options: {}
   },
+
+  docs: {}
 };
 export default config;
