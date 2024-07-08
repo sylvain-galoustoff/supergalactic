@@ -68,6 +68,7 @@ const DataSearch = ({
         value={inputValue}
         onChange={handleChange}
         onFocus={handleFocus}
+        autoComplete="off"
       />
       {showIcon && (
         <div className={`${style.addon} ${addonClass}`}>
