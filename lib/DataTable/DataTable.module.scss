@@ -1,0 +1,69 @@
+.container {
+  width: 100%;
+}
+
+.toolbar {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tool {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pagination {
+  padding: 10px 0 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.paginationLinks,
+.navButtons {
+  display: flex;
+  gap: 4px;
+  cursor: pointer;
+}
+
+
+
+.tableRow {
+  display: grid;
+}
+
+.th {
+  text-align: left;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sortButtons {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.columnLabel {
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.tableBody {
+  .td {
+    padding: 10px 0;
+  }
+}
