@@ -18,3 +18,18 @@ export const useToastsList = () => {
 
   return toastList;
 };
+
+export const useToast = () => {
+  const dispatchToast = (type, message) => {
+    const toastEvent = new CustomEvent("addToast", {
+      detail: {
+        id: Date.now(),
+        type,
+        message,
+      },
+    });
+    window.dispatchEvent(toastEvent);
+  };
+
+  return dispatchToast;
+};
