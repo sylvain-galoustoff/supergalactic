@@ -6,7 +6,7 @@ function Toast({ data, animation }) {
     <div className={`${style.toast} ${data.type} ${style[animation]} toast`}>
       <div className={`${style.header} toast-header`}>
         <p>Header message</p>
-        <IoClose onClick={removeToast} />
+        <IoClose />
       </div>
       <p className={`${style.body} toast-body`}>{data.message}</p>
     </div>
