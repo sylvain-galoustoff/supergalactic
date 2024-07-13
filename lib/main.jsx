@@ -1,5 +1,3 @@
 export { default as DataSearch } from "./DataSearch/DataSearch";
 export { default as DataTable } from "./DataTable/DataTable";
 export { default as Toaster } from "./Toaster/Toaster";
-export { default as toasterSlice } from "./Toaster/redux/toasterSlice";
-export { useToast } from "./Toaster/hooks";
