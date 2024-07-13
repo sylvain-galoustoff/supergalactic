@@ -1,3 +1,10 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
 .fromRight {
   animation: fromRight .25s ease-out;
 }
