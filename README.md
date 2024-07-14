@@ -1,7 +1,7 @@
 # SUPERGALACTIC UI KIT
 
-Ce package propose une série d'élements d'interface pour le web, sous la forme de composants React.
+This package offers a series of web interface elements in the form of React components.
 
 ## Documentation
 
-Executez la commande `npm run storybook` pour afficher la documentation de chaque composant.
+Run the command `npm run storybook` to view the documentation for each component.
