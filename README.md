@@ -1,8 +1,7 @@
-# React + Vite
+# SUPERGALACTIC UI KIT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ce package propose une série d'élements d'interface pour le web, sous la forme de composants React.
 
-Currently, two official plugins are available:
+## Documentation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Executez la commande `npm run storybook` pour afficher la documentation de chaque composant.
