@@ -113,16 +113,9 @@ function DataTable({ data, ignore, containerId }) {
     }
   };
 
-  const renderPageButtons = () => {
-    const array = [];
-    for (let i = 1; i <= numberOfPages; i++) {
-      array.push(i);
-    }
-    const buttons = array.map((button) => (
-      <PageButton key={button} pageNumber={button} currentPage={currentPage} changePage={changePage} />
-    ));
-    return buttons;
-  };
+  const renderPageButtons = [...Array(numberOfPages).keys()].map((page) => (
+    <PageButton key={page} pageNumber={page + 1} currentPage={currentPage} changePage={changePage} />
+  ));
 
   const renderColumnName =
     columns &&
@@ -164,7 +157,7 @@ function DataTable({ data, ignore, containerId }) {
               <span className={`${style.pageButton} page-button`} onClick={() => changePage("previous")}>
                 Previous
               </span>
-              <span className={style.navButtons}>{renderPageButtons()}</span>
+              <span className={style.navButtons}>{renderPageButtons}</span>
               <span className={`${style.pageButton} page-button`} onClick={() => changePage("next")}>
                 Next
               </span>
