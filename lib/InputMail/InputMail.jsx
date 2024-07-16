@@ -9,25 +9,20 @@ function InputMail({ label, id }) {
 
   useEffect(() => {
     function isEmailValid(email) {
-      // Supprimer les espaces avant et après l'adresse email
       email = email.trim();
 
-      // Vérifier la longueur minimale
       if (email.length <= 3) {
         return false;
       }
 
-      // Vérifier la présence du caractère @
       if (email.indexOf("@") === -1) {
         return false;
       }
 
-      // Vérifier si l'adresse se termine par .[extension]
       if (!/\.[A-Za-z]{2,}$/.test(email)) {
         return false;
       }
 
-      // Si toutes les conditions sont vérifiées, retourner true
       return true;
     }
 
