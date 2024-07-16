@@ -6,6 +6,10 @@ function ValidationMessage({ type, validation }) {
       success: "Format d'email valide",
       danger: "Format d'email invalide",
     },
+    confirm: {
+      success: "Mots de passe identiques",
+      danger: "Mots de passe différents",
+    },
   };
 
   return (
