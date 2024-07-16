@@ -1,0 +1,14 @@
+.validationMessage {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(calc(100% + 4px));
+}
+
+.success {
+  color: green;
+}
+
+.danger {
+  color: red;
+}
