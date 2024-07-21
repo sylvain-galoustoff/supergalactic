@@ -1,5 +1,4 @@
 .calendar {
-  border: 1px solid red;
   width: 100%;
 }
 
@@ -8,8 +7,14 @@
   grid-template-columns: 6fr 1fr;
 }
 
-.monthSelector {
+.monthSelector,
+.yearSelector {
   font-size: 1rem;
+
+  select,
+  input {
+    width: 100%;
+  }
 }
 
 .grid {

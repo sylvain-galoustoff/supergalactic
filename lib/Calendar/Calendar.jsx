@@ -65,33 +65,37 @@ function Calendar({ callback }) {
 
   return (
     <div className={`${style.calendar}`}>
-      <div className={`${style.selectors}`}>
-        <select className={`${style.monthSelector}`} value={month} onChange={changeMonth}>
-          <option value="0">Janvier</option>
-          <option value="1">Février</option>
-          <option value="2">Mars</option>
-          <option value="3">Avril</option>
-          <option value="4">Mai</option>
-          <option value="5">Juin</option>
-          <option value="6">Juillet</option>
-          <option value="7">Août</option>
-          <option value="8">Septembre</option>
-          <option value="9">Octobre</option>
-          <option value="10">Novembre</option>
-          <option value="11">Décembre</option>
-        </select>
-        <input type="number" step="1" className={`${style.yearSelector}`} value={year} onChange={changeYear} />
+      <div className={`${style.selectors} selectors`}>
+        <div className={`${style.monthSelector} month-selector`}>
+          <select className={`month-input`} value={month} onChange={changeMonth}>
+            <option value="0">Janvier</option>
+            <option value="1">Février</option>
+            <option value="2">Mars</option>
+            <option value="3">Avril</option>
+            <option value="4">Mai</option>
+            <option value="5">Juin</option>
+            <option value="6">Juillet</option>
+            <option value="7">Août</option>
+            <option value="8">Septembre</option>
+            <option value="9">Octobre</option>
+            <option value="10">Novembre</option>
+            <option value="11">Décembre</option>
+          </select>
+        </div>
+        <div className={`${style.yearSelector} year-selector`}>
+          <input className={`year-input`} type="number" step="1" value={year} onChange={changeYear} />
+        </div>
       </div>
-      <div className={`${style.days} ${style.grid}`}>
-        <div className={`${style.day} ${style.weekday}`}>Lundi</div>
-        <div className={`${style.day} ${style.weekday}`}>Mardi</div>
-        <div className={`${style.day} ${style.weekday}`}>Mercredi</div>
-        <div className={`${style.day} ${style.weekday}`}>Jeudi</div>
-        <div className={`${style.day} ${style.weekday}`}>Vendredi</div>
-        <div className={`${style.day} ${style.weekday}`}>Samedi</div>
-        <div className={`${style.day} ${style.weekday}`}>Dimanche</div>
+      <div className={`${style.grid} days-of-week`}>
+        <div className={`${style.day} week-day`}>Lundi</div>
+        <div className={`${style.day} week-day`}>Mardi</div>
+        <div className={`${style.day} week-day`}>Mercredi</div>
+        <div className={`${style.day} week-day`}>Jeudi</div>
+        <div className={`${style.day} week-day`}>Vendredi</div>
+        <div className={`${style.day} week-day`}>Samedi</div>
+        <div className={`${style.day} week-day`}>Dimanche</div>
       </div>
-      <div className={`${style.days} ${style.grid}`} onWheel={handleWheel}>
+      <div className={`${style.grid} days`} onWheel={handleWheel}>
         {offsetDays > 0 && renderOffsetCells}
         {renderCells}
       </div>

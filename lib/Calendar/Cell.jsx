@@ -7,7 +7,7 @@ function Cell({ day, month, year, callback }) {
   };
 
   return (
-    <div className={style.cell} onClick={handleClick}>
+    <div className={`${day ? "cell" : "emptyCell"}`} onClick={handleClick}>
       {day}
     </div>
   );
