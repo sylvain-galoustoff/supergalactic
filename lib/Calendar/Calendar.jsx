@@ -58,7 +58,7 @@ function Calendar({ callback }) {
   ));
 
   const renderCells = Array.from({ length: daysInMonth }, (_, index) => (
-    <Cell key={index + offsetDays} day={index + 1} month={month} year={year} callback={handleDate}>
+    <Cell key={index + offsetDays} day={index + 1} month={month} year={year} today={today} callback={handleDate}>
       {index + 1}
     </Cell>
   ));
