@@ -2,6 +2,7 @@ import style from "./Calendar.module.scss";
 import { useEffect, useState } from "react";
 import { getDaysInMonth } from "date-fns";
 import { getOffsetDays } from "./dates";
+import { IoRefresh } from "react-icons/io5";
 import Cell from "./Cell";
 
 function Calendar({ callback }) {
@@ -23,6 +24,11 @@ function Calendar({ callback }) {
 
   const changeYear = (e) => {
     setYear(e.target.value.toString());
+  };
+
+  const resetCalendar = () => {
+    setMonth(today.getMonth().toString());
+    setYear(today.getFullYear().toString());
   };
 
   const handleDate = (dateObj) => {
@@ -84,6 +90,9 @@ function Calendar({ callback }) {
         </div>
         <div className={`${style.yearSelector} year-selector`}>
           <input className={`year-input`} type="number" step="1" value={year} onChange={changeYear} />
+        </div>
+        <div className={`${style.reset} reset-calendar`} onClick={resetCalendar}>
+          <IoRefresh />
         </div>
       </div>
       <div className={`${style.grid} days-of-week`}>
