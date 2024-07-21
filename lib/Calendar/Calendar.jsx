@@ -1,11 +1,14 @@
+import { useState } from "react";
 import style from "./Calendar.module.scss";
 
 function Calendar() {
+  const [currentDate, setCurrentDate] = useState(new Date());
+
   return (
     <div className={`${style.calendar}`}>
       <div className={`${style.selectors}`}>
-        <span className={`${style.monthSelector}`}>Janvier</span>
-        <span className={`${style.yearSelector}`}>2024</span>
+        <span className={`${style.monthSelector}`}>{currentDate.getMonth()}</span>
+        <span className={`${style.yearSelector}`}>{currentDate.getFullYear()}</span>
       </div>
       <div className={`${style.days} ${style.grid}`}>
         <div className={`${style.day} ${style.weekday}`}>Lundi</div>
