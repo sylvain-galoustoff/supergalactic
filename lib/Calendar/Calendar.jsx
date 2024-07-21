@@ -4,7 +4,7 @@ import { getDaysInMonth } from "date-fns";
 import { getOffsetDays } from "./dates";
 import Cell from "./Cell";
 
-function Calendar() {
+function Calendar({ callback }) {
   const today = new Date();
   const [month, setMonth] = useState(today.getMonth().toString());
   const [year, setYear] = useState(today.getFullYear().toString());
@@ -25,6 +25,12 @@ function Calendar() {
     setYear(e.target.value.toString());
   };
 
+  const handleDate = (dateObj) => {
+    if (callback) {
+      callback(dateObj);
+    }
+  };
+
   const renderOffsetCells = Array.from({ length: offsetDays }, (_, index) => (
     <Cell key={index} month={month} year={year}>
       {index + 1}
@@ -32,7 +38,7 @@ function Calendar() {
   ));
 
   const renderCells = Array.from({ length: daysInMonth }, (_, index) => (
-    <Cell key={index + offsetDays} day={index + 1} month={month} year={year}>
+    <Cell key={index + offsetDays} day={index + 1} month={month} year={year} callback={handleDate}>
       {index + 1}
     </Cell>
   ));
