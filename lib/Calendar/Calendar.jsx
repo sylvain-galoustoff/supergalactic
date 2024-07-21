@@ -1,10 +1,21 @@
-import { useState } from "react";
 import style from "./Calendar.module.scss";
+import { useEffect, useState } from "react";
+import { getDaysInMonth } from "date-fns";
+import { getOffsetDays } from "./dates";
+import Cell from "./Cell";
 
 function Calendar() {
   const today = new Date();
   const [month, setMonth] = useState(today.getMonth().toString());
   const [year, setYear] = useState(today.getFullYear().toString());
+  const [offsetDays, setOffsetDays] = useState(getOffsetDays(today));
+  const [daysInMonth, setDaysInMonth] = useState(getDaysInMonth(today));
+
+  useEffect(() => {
+    const newDate = new Date(year, month);
+    setOffsetDays(getOffsetDays(newDate));
+    setDaysInMonth(getDaysInMonth(newDate));
+  }, [month, year]);
 
   const changeMonth = (e) => {
     setMonth(e.target.value.toString());
@@ -13,6 +24,18 @@ function Calendar() {
   const changeYear = (e) => {
     setYear(e.target.value.toString());
   };
+
+  const renderOffsetCells = Array.from({ length: offsetDays }, (_, index) => (
+    <Cell key={index} month={month} year={year}>
+      {index + 1}
+    </Cell>
+  ));
+
+  const renderCells = Array.from({ length: daysInMonth }, (_, index) => (
+    <Cell key={index + offsetDays} day={index + 1} month={month} year={year}>
+      {index + 1}
+    </Cell>
+  ));
 
   return (
     <div className={`${style.calendar}`}>
@@ -43,13 +66,8 @@ function Calendar() {
         <div className={`${style.day} ${style.weekday}`}>Dimanche</div>
       </div>
       <div className={`${style.days} ${style.grid}`}>
-        <div className={`${style.day}`}>1</div>
-        <div className={`${style.day}`}>2</div>
-        <div className={`${style.day}`}>3</div>
-        <div className={`${style.day}`}>4</div>
-        <div className={`${style.day}`}>5</div>
-        <div className={`${style.day}`}>6</div>
-        <div className={`${style.day}`}>7</div>
+        {offsetDays > 0 && renderOffsetCells}
+        {renderCells}
       </div>
     </div>
   );
