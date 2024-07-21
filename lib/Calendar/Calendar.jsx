@@ -31,6 +31,26 @@ function Calendar({ callback }) {
     }
   };
 
+  const handleWheel = (e) => {
+    if (e.deltaY < 0) {
+      let newMonth = Number(month) - 1;
+      if (newMonth < 0) {
+        newMonth = 11;
+        const newYear = Number(year) - 1;
+        setYear(newYear.toString());
+      }
+      setMonth(newMonth.toString());
+    } else {
+      let newMonth = Number(month) + 1;
+      if (newMonth > 11) {
+        newMonth = 0;
+        const newYear = Number(year) + 1;
+        setYear(newYear.toString());
+      }
+      setMonth(newMonth.toString());
+    }
+  };
+
   const renderOffsetCells = Array.from({ length: offsetDays }, (_, index) => (
     <Cell key={index} month={month} year={year}>
       {index + 1}
@@ -71,7 +91,7 @@ function Calendar({ callback }) {
         <div className={`${style.day} ${style.weekday}`}>Samedi</div>
         <div className={`${style.day} ${style.weekday}`}>Dimanche</div>
       </div>
-      <div className={`${style.days} ${style.grid}`}>
+      <div className={`${style.days} ${style.grid}`} onWheel={handleWheel}>
         {offsetDays > 0 && renderOffsetCells}
         {renderCells}
       </div>
