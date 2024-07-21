@@ -1,0 +1,14 @@
+.calendar {
+  border: 1px solid red;
+  width: 100%;
+}
+
+.selectors {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
