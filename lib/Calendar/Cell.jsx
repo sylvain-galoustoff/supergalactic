@@ -8,12 +8,14 @@ function Cell({ day, month, year, today, callback }) {
   };
 
   const isToday = () => {
-    const formatToday = format(today, "yyyy-MM-dd");
-    const formatCellDate = format(new Date(year, month, day), "yyyy-MM-dd");
-    if (formatToday === formatCellDate) {
-      return true;
+    if (day) {
+      const formatToday = format(today, "yyyy-MM-dd");
+      const formatCellDate = format(new Date(year, month, day), "yyyy-MM-dd");
+      if (formatToday === formatCellDate) {
+        return true;
+      }
+      return false;
     }
-    return false;
   };
 
   return (
