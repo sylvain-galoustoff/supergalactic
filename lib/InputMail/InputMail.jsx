@@ -3,7 +3,7 @@ import style from "./InputMail.module.scss";
 import { useEffect } from "react";
 import ValidationMessage from "../ValidationMessage/ValidationMessage";
 
-function InputMail({ label, id }) {
+function InputMail({ label, id, containerClass, callback }) {
   const [inputValue, setInputValue] = useState("");
   const [validation, setValidation] = useState("danger");
 
@@ -32,10 +32,13 @@ function InputMail({ label, id }) {
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
+    if (callback) {
+      callback(e.target.value);
+    }
   };
 
   return (
-    <div className={`${style.inputWrapper}`}>
+    <div className={`${style.inputWrapper} ${containerClass && containerClass}`}>
       <label htmlFor={id}>{label}</label>
       <input type="email" className="sg-input-mail" id={id} onChange={handleChange} value={inputValue} />
       {inputValue.length > 2 && <ValidationMessage validation={validation} type="email" />}
