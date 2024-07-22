@@ -48,19 +48,19 @@ useToast takes two parameters :
 - The second parameter defines the message to be displayed in the toast.
 
 ```javascript
-Send a notification from any other component.
+//Send a notification from any other component.
 function MyOtherComponent() {
   const sendToast = useToast();
 
   const handleClick = () => {
-    sendToast("success", "Action has succeed")
-  }
+    sendToast("success", "Action has succeed");
+  };
 
-  return(
+  return (
     <button type="button" onClick={handleClick}>
       Send notification
     </button>
-  )
+  );
 }
 ```
 
