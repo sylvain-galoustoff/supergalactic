@@ -22,9 +22,11 @@ function Toast({ data, animation, onRemoveToast }) {
   };
 
   return (
-    <div className={`${style.toast} ${data.type} ${style[animation]} ${removing && style.removing} toast`}>
+    <div
+      className={`${style.toast} ${data.type} ${style[animation]} ${removing && style.removing} toast`}
+    >
       <div className={`${style.header} toast-header`}>
-        <p>Header message</p>
+        <p>{data.type}</p>
         <IoClose onClick={deleteToast} />
       </div>
       <p className={`${style.body} toast-body`}>{data.message}</p>

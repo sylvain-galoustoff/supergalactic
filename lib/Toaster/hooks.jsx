@@ -18,7 +18,9 @@ export const useToastsList = () => {
 
   const removeToast = (toastId) => {
     console.log("process remove");
-    setToastList((prevState) => prevState.filter((toast) => toast.id !== toastId));
+    setToastList((prevState) =>
+      prevState.filter((toast) => toast.id !== toastId)
+    );
   };
 
   return { toastList, removeToast };
