@@ -46,3 +46,37 @@ p {
   padding: 16px;
   background-color: lighten(#cfcfcf, 15%);
 }
+
+.toaster {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* TEST SCREEN */
+#screen {
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#toast-screen-test {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 4px;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #4775aa;
+}

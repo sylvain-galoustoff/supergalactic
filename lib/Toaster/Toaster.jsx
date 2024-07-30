@@ -3,7 +3,7 @@ import style from "./Toaster.module.scss";
 
 function Toaster({
   toastsList,
-  animation,
+  animation = "fromBottom",
   onRemoveToast,
   toasterId,
   autoDelete = false,
@@ -21,7 +21,7 @@ function Toaster({
     ));
 
   return (
-    <div className={style.toaster} id={toasterId}>
+    <div className={`${style.toaster} toaster`} id={toasterId}>
       {renderToast}
     </div>
   );

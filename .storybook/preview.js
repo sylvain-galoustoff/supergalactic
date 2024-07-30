@@ -9,6 +9,16 @@ const preview = {
         date: /Date$/i,
       },
     },
+    options: {
+      storySort: {
+        order: [
+          "Data",
+          ["DataTable", "DataSearch"],
+          "Notifications",
+          ["Toast", "Toaster", "Toaster screen test"],
+        ],
+      },
+    },
   },
 
   tags: ["autodocs"],
