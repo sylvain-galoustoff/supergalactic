@@ -2,16 +2,18 @@ import style from "./Toaster.module.scss";
 import { IoClose } from "react-icons/io5";
 import { useEffect, useState } from "react";
 
-function Toast({ data, animation, onRemoveToast }) {
+function Toast({ data, animation, onRemoveToast, autoDelete }) {
   const [removing, setRemoving] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      setRemoving(true);
+    if (autoDelete) {
       setTimeout(() => {
-        onRemoveToast(data.id);
-      }, 300);
-    }, 5000);
+        setRemoving(true);
+        setTimeout(() => {
+          onRemoveToast(data.id);
+        }, 300);
+      }, 5000);
+    }
   }, []);
 
   const deleteToast = () => {
