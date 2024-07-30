@@ -1,0 +1,48 @@
+p {
+  margin: 0
+}
+
+.toast {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 250px;
+
+  &.success {
+    .toast-header {
+      background-color: #86da86;
+    }
+
+    .toast-body {
+      background-color: lighten(#86da86, 20%);
+    }
+  }
+
+  &.warning {
+    .toast-header {
+      background-color: #dbca6b;
+    }
+
+    .toast-body {
+      background-color: lighten(#dbca6b, 20%);
+    }
+  }
+
+  &.danger {
+    .toast-header {
+      background-color: #db6b6b;
+    }
+
+    .toast-body {
+      background-color: lighten(#db6b6b, 20%);
+    }
+  }
+}
+
+.toast-header {
+  padding: 16px;
+  background-color: #cfcfcf;
+}
+
+.toast-body {
+  padding: 16px;
+  background-color: lighten(#cfcfcf, 15%);
+}
